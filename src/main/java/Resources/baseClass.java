@@ -6,17 +6,22 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class baseClass {
 
 	public WebDriver driver;
+	Properties prop;
 
 	public void intializeDriver() throws IOException {
 
 		// To read the data
-		FileInputStream fis = new FileInputStream("C:\\Users\\Chandan\\eclipse-workspace\\SeleniumProject\\src\\main\\java\\Resources\\data.properties");
+		//FileInputStream fis = new FileInputStream("C:\\Users\\Chandan\\eclipse-workspace\\SeleniumProject\\src\\main\\java\\Resources\\data.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\data.properties");
 		// access the data.properties file-
-		Properties prop = new Properties();
+		 prop = new Properties();
 		// loading the readed file
 		prop.load(fis);
 
@@ -25,8 +30,9 @@ public class baseClass {
 		System.exit(0);*/
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\Chandan\\Desktop\\Chrome Driver\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver","C:\\Users\\Chandan\\Desktop\\Chrome Driver\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup(); //To run with latest browser
+		//   WebDriverManager.chromedriver().browserVersion("79.0.9").setup(); //To run with specific version
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 
@@ -42,6 +48,14 @@ public class baseClass {
 
 		}
 
+	}
+	
+	
+	@BeforeMethod
+	public void launchURL() throws IOException {
+		intializeDriver(); // called base class method
+		String url = prop.getProperty("url"); // This driver have scope
+		driver.get(url);
 	}
 
 }

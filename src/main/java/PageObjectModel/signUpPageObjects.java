@@ -8,16 +8,16 @@ public class signUpPageObjects {
 
 	WebDriver driver;
 
-	By firstname = By.xpath("//input[@name='UserFirstName']");
-	By lastname = By.xpath("//input[@name='UserLastName']");
-	By jobTitle = By.xpath("//input[@name='UserTitle']");
-	By UserEmail = By.xpath("//input[@name='UserEmail']");
-	By UserPhone = By.xpath("//input[@name='UserPhone']");
-	By employees = By.xpath("//select[@name='CompanyEmployees']");
-	By company = By.xpath("//input[@name='CompanyName']");
-	By country = By.xpath("//select[@name='CompanyCountry']");
+	public By firstname = By.xpath("//input[@name='UserFirstName']");
+	private By lastname = By.xpath("//input[@name='UserLastName']");
+	private By jobTitle = By.xpath("//input[@name='UserTitle']");
+	private By UserEmail = By.xpath("//input[@name='UserEmail']");
+	private By UserPhone = By.xpath("//input[@name='UserPhone']");
+	private By employees = By.xpath("//select[@name='CompanyEmployees']");
+	private By company = By.xpath("//input[@name='CompanyName']");
+	private By country = By.xpath("//select[@name='CompanyCountry']");
 	//div[@class='checkbox-ui'][1]
-	By agree = By.xpath("//input[@id='SubscriptionAgreement']");
+	private By agree = By.xpath("(//div[@class='checkbox-ui'])[1]");
 
 	public signUpPageObjects(WebDriver driver2) {
 		// TODO Auto-generated constructor stub

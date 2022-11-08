@@ -10,11 +10,12 @@ public class loginPageObjects {
 	
 	 //driver.findElement(By.xpath("//hshsju")).sendKeys("test");
 
-	By username = By.xpath("//input[@id='username']");
-	By password = By.xpath("//input[@id='password']");
-	By logIn = By.xpath("//input[@id='Login']");
+	private By username = By.xpath("//input[@id='username']");
+	private By password = By.xpath("//input[@id='password']");
+	private By logIn = By.xpath("//input[@id='Login']");
+	private By errormsg = By.xpath("//div[@id='error']");
 	
-	By tryForFree = By.xpath("//a[@id='signup_link']");
+	private By tryForFree = By.xpath("//a[@id='signup_link']");
 	
 	public loginPageObjects(WebDriver driver2) {
 		// TODO Auto-generated constructor stub
@@ -35,6 +36,9 @@ public class loginPageObjects {
 	
 	public WebElement tryForFree() {
 		return driver.findElement(tryForFree);
+	}
+	public WebElement errorMsg() {
+		return driver.findElement(errormsg);
 	}
 
 }
