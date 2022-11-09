@@ -16,7 +16,7 @@ import Resources.baseClass;
 public class VerifyLogin extends baseClass {
 
 	@Test
-	public void login() throws IOException {
+	public void login() throws IOException, InterruptedException {
 		
 
 		loginPageObjects LPO = new loginPageObjects(driver);
@@ -26,7 +26,11 @@ public class VerifyLogin extends baseClass {
 
 		LPO.clickOnLogin().click();
 		
+		//System.out.println(Constant.expectedString);
+		//System.out.println(LPO.errorMsg().getText());
+		//System.exit(0);
 		
+		Thread.sleep(5000);
 		CommonUtilities.handleAssertions(LPO.errorMsg().getText(), Constant.expectedString);
 		
 	}

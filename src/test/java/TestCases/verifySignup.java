@@ -29,7 +29,7 @@ public class verifySignup extends baseClass {
 	     
 	     signUpPageObjects  SPO=new signUpPageObjects (driver);
 	     
-	     Thread.sleep(5000);
+	     Thread.sleep(10000);
 	    // CommonUtilities.handlExplictWaithroughBy(10,SPO.firstname );
 	     
 	     SPO.enterFirstname().sendKeys(Constant.Firstname);

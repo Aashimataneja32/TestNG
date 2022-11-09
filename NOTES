@@ -1,0 +1,38 @@
+Explain the project structure-
+
+1. Create maven template--
+    Group id- package name-
+ artifcat id- project name
+ 
+2. use of maven-- provide temeplated for project--
+   pom.xml-- use to add depedency
+
+
+Steps --
+1. created maven template--
+2. added depedency in pom.xml--
+3. created resource package-- src/main/java
+4. created data.properties and base class file in resource package
+5. base class--driver inityaialization code
+6. data.proprties-- key and value
+7. created new package--Testcases -- src/test/java
+8.create new testcases verifyLogin--  Testcases package
+9. created page object model pacage inside src/main/java
+   page object model-- deisgn pattern
+   
+
+Modifcations--
+1. added before method in base class
+2. added url in data.properties
+3. kept common path of properties file so it will run in all machines
+4. if chrome version updated then--- webdrivermnager
+5. added constsnt file for test data
+6. added common utilities
+
+
+
+https://naveenautomationlabs.com/opencart/
+
+Naveenautomationlabs (https://naveenautomationlabs.com/opencart/)
+Your Store
+My Store
